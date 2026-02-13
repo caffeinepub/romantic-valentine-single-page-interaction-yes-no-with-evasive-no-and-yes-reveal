@@ -1,0 +1,13 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the ValentinePage component as the single-page experience.",
+  "frontend/src/components/ValentinePage.tsx": "Container component managing the state transition between the Valentine prompt view and the success view when \"Yes\" is clicked.",
+  "frontend/src/components/ValentinePrompt.tsx": "Displays the romantic Valentine question with animated heart icon and manages the \"No\" button interaction counter.",
+  "frontend/src/components/ValentineActions.tsx": "Renders the \"Yes\" and \"No\" action buttons with pointer event handlers that track interactions and hide \"No\" after 3 touches/hovers.",
+  "frontend/src/components/ValentineSuccess.tsx": "Success view displaying the meme image and the complete heartfelt message with romantic styling and animations, now with the exact personalized text for IQRA including the correct heading, body message, and closing line with emojis.",
+  "frontend/src/index.css": "Global styles with a romantic pink-and-white OKLCH color system, gradient backgrounds, and custom utility classes for the Valentine theme.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color tokens and custom theme values for the pink-and-white Valentine aesthetic.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are required for this static single-page Valentine experience.",
+  "frontend/src/publishSlug.ts": "Defines and validates the publish/deploy domain slug \"romantic-valentine\" against platform requirements (5-50 chars, lowercase letters/numbers/hyphens only).",
+  "frontend/src/config.ts": "Application configuration file that exports the validated publish slug and app metadata for use by build and deployment tooling.",
+  "frontend/src/main.tsx": "Application entry point that validates the publish slug on startup and renders the app with QueryClient and InternetIdentity providers."
+}

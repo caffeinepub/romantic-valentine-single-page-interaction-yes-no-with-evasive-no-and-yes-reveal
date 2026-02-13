@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-success-screen-shown-after-clicking-tapping-yes-so-that-all-user-facing-text-exactly-matches-the-user-provided-wording-capitalization-punctuation-spacing-line-breaks-and-emojis-heading-text-must-be-exactly-good-choice-choosing-me-is-and-the-body-text-must-start-with-iqra-i-just-want-to-thank-you-from-the-bottom-of-my-heart-and-end-with-i-love-you-my-baby-girl-iqra",
+      "featureTitle": "Update the success screen (shown after clicking/tapping “Yes”) so that all user-facing text exactly matches the user-provided wording, capitalization, punctuation, spacing/line breaks, and emojis: heading text must be exactly “Good choice Choosing me is..❤️” and the body text must start with “IQRA, I just want to thank you from the bottom of my heart…” and end with “I love you my baby girl Iqra🐣💗💋”.",
+      "files": [
+        "frontend/src/components/ValentineSuccess.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

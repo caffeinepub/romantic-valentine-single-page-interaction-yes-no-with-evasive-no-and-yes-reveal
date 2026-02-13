@@ -1,0 +1,24 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Align Valentine success screen text with exact provided wording",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Update the Valentine success screen heading and message text to exactly match the user-provided wording (including capitalization, punctuation, spacing/line breaks, and emojis).",
+      "acceptanceCriteria": [
+        "After clicking/tapping “Yes”, the success heading displays exactly: “Good choice Choosing me is..❤️” (no added/removed punctuation, no extra spaces, no exclamation).",
+        "The success message body uses the exact provided text with “IQRA,” at the start and includes the heart emoji near the end exactly as provided.",
+        "The closing line displays exactly: “I love you my baby girl Iqra🐣💗💋” (including the chick and kiss emojis).",
+        "No other names/phrases (e.g., “Iraj”, “bojniiii”) appear anywhere on the success screen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentineSuccess.tsx",
+          "operation": "modify",
+          "description": "Replace the success heading text with exactly “Good choice Choosing me is..❤️”, update the body paragraph so it starts exactly with “IQRA, I just want to thank you from the bottom of my heart…” and ensure it includes the heart emoji near the end exactly as provided, and replace the closing line text with exactly “I love you my baby girl Iqra🐣💗💋”. Remove any other names/phrases currently present on the success screen and preserve any required spacing/line breaks."
+        }
+      ]
+    }
+  ]
+}

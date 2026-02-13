@@ -1,2 +1,3 @@
-# romantic-valentine-single-page-interaction-yes-no-with-evasive-no-and-yes-reveal
-Exported from Caffeine project: Romantic valentine
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

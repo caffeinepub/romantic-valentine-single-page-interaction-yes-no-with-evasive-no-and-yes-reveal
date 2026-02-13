@@ -1,0 +1,40 @@
+{
+  "kind": "build_request",
+  "title": "Update Valentine success screen text to match the provided message exactly",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "text": "Update the success screen (shown after clicking/tapping “Yes”) so that all user-facing text exactly matches the user-provided wording, capitalization, punctuation, spacing/line breaks, and emojis: heading text must be exactly “Good choice Choosing me is..❤️” and the body text must start with “IQRA, I just want to thank you from the bottom of my heart…” and end with “I love you my baby girl Iqra🐣💗💋”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "When she clicks Yes, show her a meme image telling her “Good choice Choosing me is..❤️”IQRA, I just want to thank you from the bottom of my heart... I love you my baby girl Iqra🐣💗💋"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After clicking/tapping “Yes”, the success heading displays exactly: “Good choice Choosing me is..❤️” (no added/removed punctuation, no extra spaces, no exclamation).",
+        "The success message body uses the exact provided text with “IQRA,” at the start and includes the heart emoji near the end exactly as provided.",
+        "The closing line displays exactly: “I love you my baby girl Iqra🐣💗💋” (including the chick and kiss emojis).",
+        "No other names/phrases (e.g., “Iraj”, “bojniiii”) appear anywhere on the success screen."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (read-only). Compose existing UI components instead.",
+    "Keep the backend as a single Motoko actor in backend/main.mo; no additional backend services.",
+    "Do not introduce third-party authentication providers; only Internet Identity is supported (no change needed for this request)."
+  ],
+  "nonGoals": [
+    "Adding new pages, routing, or multi-step flows beyond the existing prompt/success screens.",
+    "Adding persistence, analytics, databases, or any backend state for tracking interactions.",
+    "Changing the overall romantic pink/white theme beyond what is required to correct the text content."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

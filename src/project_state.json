@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Interactive romantic Valentine web page (HTML/CSS/JS) with Yes/No choices; No disappears after 3 hovers; Yes reveals a meme image and a heartfelt message, optimized to run in Chrome on iPad.",
+  "architectural_notes": [
+    "Single-page static site implemented with HTML/CSS/vanilla JavaScript; designed for mobile Safari/Chrome compatibility (iPad Chrome).",
+    "Publishing/deployment domain must be a slug: 5–50 characters, only letters/numbers/hyphens (no spaces, parentheses, or slashes).",
+    "Use the user-provided exact ‘Yes’ success message text (includes recipient name ‘IQRA/Iqra’ and emojis) following the opening line “Good choice Choosing me is..❤️”."
+  ],
+  "known_issues": [
+    "Deployment/publish can fail if the chosen domain contains invalid characters (e.g., spaces, parentheses, slashes); must use a valid slug.",
+    "Draft deployment/app may expire; if expired, the project needs to be rebuilt/redeployed before sharing the link."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-romantic-valentine-prompt-ui-that-asks-the-user-to-be-the-author-s-valentine-using-a-pink-and-white-color-scheme-and-a-simple-mobile-friendly-layout-that-works-well-in-chrome-on-ipad",
+      "title": "Create a single-page romantic Valentine prompt UI that asks the user to be the author’s Valentine, using a pink-and-white color scheme and a simple, mobile-friendly layout that works well in Chrome on iPad.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-two-prominent-options-labeled-yes-and-no-track-pointer-interactions-with-the-no-option-so-that-after-the-third-hover-attempt-or-equivalent-touch-pointer-interaction-on-ipad-the-no-option-disappears-and-cannot-be-clicked",
+      "title": "Implement two prominent options labeled “Yes” and “No”. Track pointer interactions with the “No” option so that after the third hover attempt (or equivalent touch/pointer interaction on iPad), the “No” option disappears and cannot be clicked.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-taps-yes-replace-or-transition-the-ui-to-show-1-a-meme-image-and-2-the-full-provided-message-text-including-the-opening-line-good-choice-choosing-me-is-followed-by-the-thank-you-love-message",
+      "title": "When the user clicks/taps “Yes”, replace or transition the UI to show: (1) a meme image, and (2) the full provided message text, including the opening line “Good choice Choosing me is..❤️” followed by the thank-you/love message.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-simple-polished-interactivity-and-accessibility-keyboard-focus-styles-for-yes-no-sensible-aria-labels-and-motion-transition-effects-that-do-not-block-interaction",
+      "title": "Add simple, polished interactivity and accessibility: keyboard focus styles for “Yes/No”, sensible aria labels, and motion/transition effects that do not block interaction.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-generated-image-assets-by-placing-them-under-frontend-public-assets-generated-and-referencing-them-directly-from-the-frontend-ui",
+      "title": "Integrate generated image assets by placing them under frontend/public/assets/generated and referencing them directly from the frontend UI.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-s-publish-deploy-domain-slug-to-a-valid-lowercase-hyphenated-value-derived-from-the-user-s-requested-domain-name-romantic-valentine-e-g-romantic-valentine-ensuring-it-meets-the-platform-rule-5-50-characters-and-contains-only-letters-numbers-and-hyphens-no-spaces-parentheses-or-slashes",
+      "title": "Update the app’s publish/deploy domain slug to a valid, lowercase, hyphenated value derived from the user’s requested domain name “Romantic valentine” (e.g., “romantic-valentine”), ensuring it meets the platform rule: 5–50 characters and contains only letters, numbers, and hyphens (no spaces, parentheses, or slashes).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-success-screen-shown-after-clicking-tapping-yes-so-that-all-user-facing-text-exactly-matches-the-user-provided-wording-capitalization-punctuation-spacing-line-breaks-and-emojis-heading-text-must-be-exactly-good-choice-choosing-me-is-and-the-body-text-must-start-with-iqra-i-just-want-to-thank-you-from-the-bottom-of-my-heart-and-end-with-i-love-you-my-baby-girl-iqra",
+      "title": "Update the success screen (shown after clicking/tapping “Yes”) so that all user-facing text exactly matches the user-provided wording, capitalization, punctuation, spacing/line breaks, and emojis: heading text must be exactly “Good choice Choosing me is..❤️” and the body text must start with “IQRA, I just want to thank you from the bottom of my heart…” and end with “I love you my baby girl Iqra🐣💗💋”.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a simple romantic-themed Valentine proposal web page with two options: Yes and No",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Make the No option disappear after the cursor hovers over it 3 times so it cannot be clicked",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "On clicking Yes, display a meme image plus the provided “Good choice…” and thank-you/love message",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Use a pink and white romantic color scheme and styling",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Ensure the page is fully interactive using only HTML, CSS, and JavaScript and runs easily in Chrome on iPad",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic valentine",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
