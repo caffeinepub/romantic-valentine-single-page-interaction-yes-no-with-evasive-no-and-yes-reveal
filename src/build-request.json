@@ -1,37 +1,72 @@
 {
   "kind": "build_request",
-  "title": "Update Valentine success screen text to match the provided message exactly",
+  "title": "Update Valentine page: force Yes via button resizing and personalize success message for Naina",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-7",
-      "text": "Update the success screen (shown after clicking/tapping “Yes”) so that all user-facing text exactly matches the user-provided wording, capitalization, punctuation, spacing/line breaks, and emojis: heading text must be exactly “Good choice Choosing me is..❤️” and the body text must start with “IQRA, I just want to thank you from the bottom of my heart…” and end with “I love you my baby girl Iqra🐣💗💋”.",
+      "id": "REQ-8",
+      "text": "Update the prompt actions so the two options are labeled exactly “Yes” and “No” (no extra words or emojis in the labels).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-user"
         ],
         "quotes": [
-          "When she clicks Yes, show her a meme image telling her “Good choice Choosing me is..❤️”IQRA, I just want to thank you from the bottom of my heart... I love you my baby girl Iqra🐣💗💋"
+          "There should be two options: Yes or No."
         ]
       },
       "acceptanceCriteria": [
-        "After clicking/tapping “Yes”, the success heading displays exactly: “Good choice Choosing me is..❤️” (no added/removed punctuation, no extra spaces, no exclamation).",
-        "The success message body uses the exact provided text with “IQRA,” at the start and includes the heart emoji near the end exactly as provided.",
-        "The closing line displays exactly: “I love you my baby girl Iqra🐣💗💋” (including the chick and kiss emojis).",
-        "No other names/phrases (e.g., “Iraj”, “bojniiii”) appear anywhere on the success screen."
+        "On the prompt screen, the primary action button text reads exactly “Yes”.",
+        "On the prompt screen, the secondary action button text reads exactly “No”."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Change the “No” interaction behavior so that when the user hovers (pointer enter) over “No”, the “No” button visually shrinks and the “Yes” button visually grows, making it difficult to click “No”; on iPad (no hover), apply the same effect on pointer down/tap on “No”. Preserve the existing behavior where repeated “No” interactions can still hide “No” after the third interaction so it cannot be clicked.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user"
+        ],
+        "quotes": [
+          "When she hovers her cursor over No, it should getting small and yes option will get big so she cannot click on no option , forcing her to click only on Yes."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On desktop, moving the cursor onto the “No” button causes “No” to shrink and “Yes” to enlarge with a smooth transition.",
+        "On iPad Chrome, tapping/pressing on “No” triggers the same shrink/grow effect (without requiring hover).",
+        "After the third “No” interaction (hover/pointer enter or pointer down), the “No” option is removed/hidden and can no longer be clicked.",
+        "The “Yes” button remains clickable throughout and continues to transition to the success screen when tapped/clicked."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Update the success screen user-facing text to exactly match the user’s provided wording for Naina, including punctuation, capitalization, emojis, and line breaks. The success heading must be exactly: “Good choice me is ❤️”. The body must be exactly the provided paragraph followed by the closing line “I love you so much naina”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user"
+        ],
+        "quotes": [
+          "When she clicks Yes, show her a meme image telling her “Good choice me is ❤️\n\nNaina, I just want to thank you from the bottom of my heart for choosing me as your life partner. It means more to me than words can truly explain. Your trust, your love, and the way you stand by me make my world brighter every single day. I promise to always respect you, support your dreams, and keep trying to become the person you deserve. With you, life feels more beautiful, more peaceful, and full of hope. I’m truly grateful to have you in my life, today and always. ❤️”.\nI love you so much naina"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After clicking/tapping “Yes”, the success heading text is exactly: “Good choice me is ❤️”.",
+        "The success message body includes the exact text addressed to “Naina,” as provided by the user, preserving the curly apostrophe in “I’m”, the ❤️ emoji, and the closing quote/period as given.",
+        "The final line on the success screen reads exactly: “I love you so much naina”."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/components/ui (read-only). Compose existing UI components instead.",
-    "Keep the backend as a single Motoko actor in backend/main.mo; no additional backend services.",
-    "Do not introduce third-party authentication providers; only Internet Identity is supported (no change needed for this request)."
+    "Do not edit any files under frontend/src/components/ui (compose them as-is).",
+    "Do not edit files in frontend immutablePaths (authentication hooks and main bootstrap files).",
+    "Keep the backend as a single Motoko actor; no backend changes are required for these UI-only updates."
   ],
   "nonGoals": [
-    "Adding new pages, routing, or multi-step flows beyond the existing prompt/success screens.",
-    "Adding persistence, analytics, databases, or any backend state for tracking interactions.",
-    "Changing the overall romantic pink/white theme beyond what is required to correct the text content."
+    "Adding sound effects or background music.",
+    "Adding backend persistence, user accounts, or analytics.",
+    "Changing the pink/white romantic theme beyond what is needed to support the new button-resize interaction."
   ],
   "imageRequirements": {
     "required": [],

@@ -1,17 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
-  "summary": "Interactive romantic Valentine web page (HTML/CSS/JS) with Yes/No choices; No disappears after 3 hovers; Yes reveals a meme image and a heartfelt message, optimized to run in Chrome on iPad.",
+  "projectStateVersion": 9,
+  "summary": "Interactive romantic Valentine web page (HTML/CSS/JS) with Yes/No choices; on hovering over “No”, it shrinks while “Yes” grows to prevent clicking No; clicking Yes reveals a meme image and a heartfelt message for Naina, optimized to run in Chrome on iPad.",
   "architectural_notes": [
     "Single-page static site implemented with HTML/CSS/vanilla JavaScript; designed for mobile Safari/Chrome compatibility (iPad Chrome).",
     "Publishing/deployment domain must be a slug: 5–50 characters, only letters/numbers/hyphens (no spaces, parentheses, or slashes).",
-    "Use the user-provided exact ‘Yes’ success message text (includes recipient name ‘IQRA/Iqra’ and emojis) following the opening line “Good choice Choosing me is..❤️”."
+    "Replace the previous 'No disappears after 3 hovers' interaction with a hover interaction where No shrinks and Yes grows to make No effectively unclickable.",
+    "Use the user-provided exact ‘Yes’ success message text addressed to ‘Naina’, including the line “Good choice me is ❤️” and the closing “I love you so much naina”."
   ],
   "known_issues": [
     "Deployment/publish can fail if the chosen domain contains invalid characters (e.g., spaces, parentheses, slashes); must use a valid slug.",
     "Draft deployment/app may expire; if expired, the project needs to be rebuilt/redeployed before sharing the link."
   ],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-create-a-single-page-romantic-valentine-prompt-ui-that-asks-the-user-to-be-the-author-s-valentine-using-a-pink-and-white-color-scheme-and-a-simple-mobile-friendly-layout-that-works-well-in-chrome-on-ipad",
@@ -68,6 +69,30 @@
         "REQ-7"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-prompt-actions-so-the-two-options-are-labeled-exactly-yes-and-no-no-extra-words-or-emojis-in-the-labels",
+      "title": "Update the prompt actions so the two options are labeled exactly “Yes” and “No” (no extra words or emojis in the labels).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-change-the-no-interaction-behavior-so-that-when-the-user-hovers-pointer-enter-over-no-the-no-button-visually-shrinks-and-the-yes-button-visually-grows-making-it-difficult-to-click-no-on-ipad-no-hover-apply-the-same-effect-on-pointer-down-tap-on-no-preserve-the-existing-behavior-where-repeated-no-interactions-can-still-hide-no-after-the-third-interaction-so-it-cannot-be-clicked",
+      "title": "Change the “No” interaction behavior so that when the user hovers (pointer enter) over “No”, the “No” button visually shrinks and the “Yes” button visually grows, making it difficult to click “No”; on iPad (no hover), apply the same effect on pointer down/tap on “No”. Preserve the existing behavior where repeated “No” interactions can still hide “No” after the third interaction so it cannot be clicked.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-success-screen-user-facing-text-to-exactly-match-the-user-s-provided-wording-for-naina-including-punctuation-capitalization-emojis-and-line-breaks-the-success-heading-must-be-exactly-good-choice-me-is-the-body-must-be-exactly-the-provided-paragraph-followed-by-the-closing-line-i-love-you-so-much-naina",
+      "title": "Update the success screen user-facing text to exactly match the user’s provided wording for Naina, including punctuation, capitalization, emojis, and line breaks. The success heading must be exactly: “Good choice me is ❤️”. The body must be exactly the provided paragraph followed by the closing line “I love you so much naina”.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -98,6 +123,18 @@
     {
       "id": "AR-5",
       "summary": "Ensure the page is fully interactive using only HTML, CSS, and JavaScript and runs easily in Chrome on iPad",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "On hovering over “No”, shrink the No button and enlarge the Yes button to prevent clicking No (force Yes)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Update the Yes-success message text to the provided wording addressed to Naina (including the “Good choice me is ❤️” line)",
       "reqIds": [],
       "status": "pending"
     }

@@ -1,22 +1,58 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Align Valentine success screen text with exact provided wording",
+  "title": "Valentine page: force Yes via button resizing and personalize success message for Naina",
   "requirements": [
     {
-      "id": "REQ-7",
-      "summary": "Update the Valentine success screen heading and message text to exactly match the user-provided wording (including capitalization, punctuation, spacing/line breaks, and emojis).",
+      "id": "REQ-8",
+      "summary": "Ensure the two prompt action buttons are labeled exactly “Yes” and “No”.",
       "acceptanceCriteria": [
-        "After clicking/tapping “Yes”, the success heading displays exactly: “Good choice Choosing me is..❤️” (no added/removed punctuation, no extra spaces, no exclamation).",
-        "The success message body uses the exact provided text with “IQRA,” at the start and includes the heart emoji near the end exactly as provided.",
-        "The closing line displays exactly: “I love you my baby girl Iqra🐣💗💋” (including the chick and kiss emojis).",
-        "No other names/phrases (e.g., “Iraj”, “bojniiii”) appear anywhere on the success screen."
+        "On the prompt screen, the primary action button text reads exactly “Yes”.",
+        "On the prompt screen, the secondary action button text reads exactly “No”."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentineActions.tsx",
+          "operation": "modify",
+          "description": "Update the shadcn-ui Button labels so the primary reads exactly \"Yes\" and the secondary reads exactly \"No\" (remove any extra words/emojis). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Make “No” interactions shrink “No” and grow “Yes” on hover (desktop) and pointer down (iPad), while still hiding “No” after the third interaction.",
+      "acceptanceCriteria": [
+        "On desktop, moving the cursor onto the “No” button causes “No” to shrink and “Yes” to enlarge with a smooth transition.",
+        "On iPad Chrome, tapping/pressing on “No” triggers the same shrink/grow effect (without requiring hover).",
+        "After the third “No” interaction (hover/pointer enter or pointer down), the “No” option is removed/hidden and can no longer be clicked.",
+        "The “Yes” button remains clickable throughout and continues to transition to the success screen when tapped/clicked."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentineActions.tsx",
+          "operation": "modify",
+          "description": "Add UI state to toggle a shrink/grow effect: on “No” pointer enter, visually shrink the “No” shadcn-ui Button and grow the “Yes” Button; on “No” pointer down, trigger the same effect for touch devices (e.g., iPad). Keep smooth transitions (scale/transform) and ensure “Yes” remains clickable. Ensure the existing onNoInteraction callback continues to run for both pointer enter and pointer down so the third interaction still hides “No”. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ValentinePrompt.tsx",
+          "operation": "modify",
+          "description": "Confirm the interaction counter/hide logic continues to be driven solely by the onNoInteraction callback (including pointer enter and pointer down), so the “No” button is removed after the third interaction and cannot be clicked."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Replace the success screen text with the exact provided Naina wording, preserving punctuation, emojis, and line breaks.",
+      "acceptanceCriteria": [
+        "After clicking/tapping “Yes”, the success heading text is exactly: “Good choice me is ❤️”.",
+        "The success message body includes the exact text addressed to “Naina,” as provided by the user, preserving the curly apostrophe in “I’m”, the ❤️ emoji, and the closing quote/period as given.",
+        "The final line on the success screen reads exactly: “I love you so much naina”."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/ValentineSuccess.tsx",
           "operation": "modify",
-          "description": "Replace the success heading text with exactly “Good choice Choosing me is..❤️”, update the body paragraph so it starts exactly with “IQRA, I just want to thank you from the bottom of my heart…” and ensure it includes the heart emoji near the end exactly as provided, and replace the closing line text with exactly “I love you my baby girl Iqra🐣💗💋”. Remove any other names/phrases currently present on the success screen and preserve any required spacing/line breaks."
+          "description": "Update the success heading to exactly “Good choice me is ❤️”. Replace the body content with the exact user-provided text for Naina, preserving capitalization, punctuation, emojis, and line breaks (including the curly apostrophe in “I’m” and the closing quote/period). Update the closing line to exactly “I love you so much naina”. Keep the existing generated meme image reference as-is."
         }
       ]
     }

@@ -2,8 +2,44 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-success-screen-shown-after-clicking-tapping-yes-so-that-all-user-facing-text-exactly-matches-the-user-provided-wording-capitalization-punctuation-spacing-line-breaks-and-emojis-heading-text-must-be-exactly-good-choice-choosing-me-is-and-the-body-text-must-start-with-iqra-i-just-want-to-thank-you-from-the-bottom-of-my-heart-and-end-with-i-love-you-my-baby-girl-iqra",
-      "featureTitle": "Update the success screen (shown after clicking/tapping “Yes”) so that all user-facing text exactly matches the user-provided wording, capitalization, punctuation, spacing/line breaks, and emojis: heading text must be exactly “Good choice Choosing me is..❤️” and the body text must start with “IQRA, I just want to thank you from the bottom of my heart…” and end with “I love you my baby girl Iqra🐣💗💋”.",
+      "featureId": "feature-update-the-prompt-actions-so-the-two-options-are-labeled-exactly-yes-and-no-no-extra-words-or-emojis-in-the-labels",
+      "featureTitle": "Update the prompt actions so the two options are labeled exactly “Yes” and “No” (no extra words or emojis in the labels).",
+      "files": [
+        "frontend/src/components/ValentineActions.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-change-the-no-interaction-behavior-so-that-when-the-user-hovers-pointer-enter-over-no-the-no-button-visually-shrinks-and-the-yes-button-visually-grows-making-it-difficult-to-click-no-on-ipad-no-hover-apply-the-same-effect-on-pointer-down-tap-on-no-preserve-the-existing-behavior-where-repeated-no-interactions-can-still-hide-no-after-the-third-interaction-so-it-cannot-be-clicked",
+      "featureTitle": "Change the “No” interaction behavior so that when the user hovers (pointer enter) over “No”, the “No” button visually shrinks and the “Yes” button visually grows, making it difficult to click “No”; on iPad (no hover), apply the same effect on pointer down/tap on “No”. Preserve the existing behavior where repeated “No” interactions can still hide “No” after the third interaction so it cannot be clicked.",
+      "files": [
+        "frontend/src/components/ValentineActions.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-success-screen-user-facing-text-to-exactly-match-the-user-s-provided-wording-for-naina-including-punctuation-capitalization-emojis-and-line-breaks-the-success-heading-must-be-exactly-good-choice-me-is-the-body-must-be-exactly-the-provided-paragraph-followed-by-the-closing-line-i-love-you-so-much-naina",
+      "featureTitle": "Update the success screen user-facing text to exactly match the user’s provided wording for Naina, including punctuation, capitalization, emojis, and line breaks. The success heading must be exactly: “Good choice me is ❤️”. The body must be exactly the provided paragraph followed by the closing line “I love you so much naina”.",
       "files": [
         "frontend/src/components/ValentineSuccess.tsx"
       ],
@@ -15,7 +51,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-7"
+        "REQ-10"
       ],
       "confidence": "high"
     }
